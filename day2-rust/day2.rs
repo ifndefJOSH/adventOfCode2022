@@ -21,7 +21,7 @@ fn main() {
 
     let file = File::open(filename).unwrap();
     let reader = BufReader::new(file);
-    
+
     let mut totalScore = 0;
     let mut totalScorePart2 = 0;
     // Read each line in the file
