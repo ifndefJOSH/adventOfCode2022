@@ -16,3 +16,7 @@ Glad I got the experience
 ## Day 3: D
 
 The D language is really cool, but does not appear to be mature. I had to do part 2 in Python since variable values for `string` variables seemed to be nondeterministically changing in D.
+
+## Day 4: Kotlin
+
+JVM languages, amirite?
