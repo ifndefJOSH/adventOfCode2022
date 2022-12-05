@@ -5,19 +5,20 @@ local crateFileFinal = "initConfig2.txt"
 
 function modifyCrates(crates, fromIndex, toIndex, stackCount)
 	printTable(crates)
-	print(crates[fromIndex - 1][1])
 	print("Size of crates: ", #(crates))
 	print("Last element in crates: ", crates[#(crates)])
 	print("Second to last element in crates: ", crates[#(crates) - 1])
 	print("Index to pull from (remember, Lua is 1-based indexing): ", fromIndex)
 	print("Crate at this index: ", crates[fromIndex])
-	print("Crate at this index - 1: ", crates[fromIndex - 1])
 	print("Make it make sense")
 	-- Lua is a busted language
 	local topFromCrate = #(crates[fromIndex])
 	for i = topFromCrate,topFromCrate - stackCount, -1 do
 		if crates[fromIndex] == nil then
 			break
+		end
+		if crates[toIndex] == nil then
+			crates[toIndex] = {}
 		end
 		crates[toIndex][#(crates[toIndex])] = crates[fromIndex][i]
 		crates[fromIndex][i] = nil
@@ -107,9 +108,9 @@ function part1()
 			lineMatch[i] = v
 			i = i + 1
 		end
-		local moveCount = lineMatch[1]
-		local fromCrate = lineMatch[2]
-		local toCrate  = lineMatch[3]
+		local moveCount = tonumber(lineMatch[1])
+		local fromCrate = tonumber(lineMatch[2])
+		local toCrate  = tonumber(lineMatch[3])
 		print(moveCount, " ", fromCrate, " ", toCrate)
 		crates = modifyCrates(crates, fromCrate, toCrate, moveCount)
 	end
