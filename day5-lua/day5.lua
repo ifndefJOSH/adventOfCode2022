@@ -4,23 +4,22 @@ local crateFile = "initConfig.txt"
 local crateFileFinal = "initConfig2.txt"
 
 function modifyCrates(crates, fromIndex, toIndex, stackCount)
-	printTable(crates)
-	print("Size of crates: ", #(crates))
-	print("Last element in crates: ", crates[#(crates)])
-	print("Second to last element in crates: ", crates[#(crates) - 1])
-	print("Index to pull from (remember, Lua is 1-based indexing): ", fromIndex)
-	print("Crate at this index: ", crates[fromIndex])
-	print("Make it make sense")
+	-- printTable(crates)
+	-- print("Size of crates: ", #(crates))
+	-- print("Last element in crates: ", crates[#(crates)])
+	-- print("Second to last element in crates: ", crates[#(crates) - 1])
+	-- print("Index to pull from (remember, Lua is 1-based indexing): ", fromIndex)
+	-- print("Crate at this index: ", crates[fromIndex])
 	-- Lua is a busted language
 	local topFromCrate = #(crates[fromIndex])
 	for i = topFromCrate,topFromCrate - stackCount, -1 do
-		if crates[fromIndex] == nil then
-			break
-		end
-		if crates[toIndex] == nil then
-			crates[toIndex] = {}
-		end
-		crates[toIndex][#(crates[toIndex])] = crates[fromIndex][i]
+		-- if crates[fromIndex] == nil then
+		-- 	break
+		-- end
+		-- if crates[toIndex] == nil then
+		-- 	crates[toIndex] = {}
+		-- end
+		crates[toIndex][#(crates[toIndex]) + 1] = crates[fromIndex][i]
 		crates[fromIndex][i] = nil
 	end
 	return crates
