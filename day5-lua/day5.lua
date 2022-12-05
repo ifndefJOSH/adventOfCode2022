@@ -4,7 +4,21 @@ local crateFile = "initConfig.txt"
 local crateFileFinal = "initConfig2.txt"
 
 function modifyCrates(crates, fromIndex, toIndex, stackCount)
-	for i = #(crates[fromIndex]),#(crates[fromIndex]) - stackCount, -1 do
+	printTable(crates)
+	print(crates[fromIndex - 1][1])
+	print("Size of crates: ", #(crates))
+	print("Last element in crates: ", crates[#(crates)])
+	print("Second to last element in crates: ", crates[#(crates) - 1])
+	print("Index to pull from (remember, Lua is 1-based indexing): ", fromIndex)
+	print("Crate at this index: ", crates[fromIndex])
+	print("Crate at this index - 1: ", crates[fromIndex - 1])
+	print("Make it make sense")
+	-- Lua is a busted language
+	local topFromCrate = #(crates[fromIndex])
+	for i = topFromCrate,topFromCrate - stackCount, -1 do
+		if crates[fromIndex] == nil then
+			break
+		end
 		crates[toIndex][#(crates[toIndex])] = crates[fromIndex][i]
 		crates[fromIndex][i] = nil
 	end
