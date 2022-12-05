@@ -20,3 +20,7 @@ The D language is really cool, but does not appear to be mature. I had to do par
 ## Day 4: Kotlin
 
 JVM languages, amirite?
+
+## Day 5: ~~Lua~~ Python again
+
+It took me several hours mucking around in Lua to decide to switch to Python and then it took me 10 minutes
