@@ -31,11 +31,19 @@ def part1()
       if line == "$ cd .."
         pwd.pop
         newDir = pwd[pwd.size - 1]
-        getFolderArray(pwd)
+        folderArray = getFolderArray(pwd)
       elsif "$ cd" in line
         newDir = line.gsub("$ cd ", "").strip()
+        folderArray = getFolderArray(pwd)
       elsif line == "$ ls"
-        # TODO: figure out how to peek at the next line
+        # Peek at the next line
+        while fh.peek != nil and not "$" in fh.peek do
+          nextLine = fh.gets
+          if "dir" in nextLine
+            newFolderName = nextLine.gsub("dir", "").strip()
+            folderArray.insert([newFolderName, []])
+          end
+        end
       end
     end
   end
