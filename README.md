@@ -24,3 +24,7 @@ JVM languages, amirite?
 ## Day 5: ~~Lua~~ Python again
 
 It took me several hours mucking around in Lua to decide to switch to Python and then it took me 10 minutes
+
+## Day 5: C++:
+
+Arguably the worst C++ I've ever written
